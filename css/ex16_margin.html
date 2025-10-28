@@ -58,6 +58,21 @@
         요소의 레이아웃을 배치하는용도로 쓰는게 아니라
         요소끼리의 간격을 조절하는 용도로 쓰는 것이 좋다
          */
+
+         .outer{
+            width: 300px;
+            background: #74b9ff;
+            margin: 50px auto;
+            border-radius: 10px;
+            color: white;
+            padding-bottom: 10px;
+         }
+         .inner{
+            background: #0984e3;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 40px;
+         }
     </style>
 </head>
 <body>
@@ -66,5 +81,15 @@
     <div class="base-box box-right" >margin-right : 100px</div>
     <div class="base-box box-battom">margin-bottom : 60px</div>
     <div class="base-box box-left"  >margin-left : 100px</div>
+
+    <hr>
+    <h2>중첩된 Margin 실습</h2>
+    <div class="outer">
+        부모 박스
+        <div class="inner">
+            자식값(Margin : 40px)<br>
+            부모에 패딩이 없으면 어떻게 될까?
+        </div>
+    </div>
 </body>
 </html>
