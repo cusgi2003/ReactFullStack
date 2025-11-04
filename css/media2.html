@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>미디어 쿼리 실습 문제</title>
+  <style>
+    /* 여기에 코드를 작성하세요 */
+    .container{
+        flex-wrap: wrap;
+        display: flex;
+        background:#a9deeb;
+        border-radius: 10px;
+    }
+
+    .box{
+        gap: 10px;
+        padding: 40px;
+        text-align: center;
+        flex: 1 1 100%;
+        background: #3e98db;
+        color: white;
+        margin: 10px;
+        border-radius: 10px;
+    }
+    
+    @media(min-width:768px){
+        .box{
+            flex: 1 1 30%;
+        }
+    }
+  </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">박스1</div>
+        <div class="box">박스1</div>
+    </div>
+</body>
+</html>
