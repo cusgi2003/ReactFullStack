@@ -174,4 +174,55 @@ box-shadow
 text-shadow
 width
 height
+
+
+Transition
+요소의 상태가 변할 때 부드럽게 변하게 해주는 것
+상태가 변하는 것 : hover, active, focus 등
+
+주요속성
+transition-property : 어떤 속성에 애니메이션 할 것인지
+all : 모든 속성에 대해서 적용
+정확히 내가 어떤 속성을 주고싶은지 적는게 좋음
+transition-duration : 전환에 걸리는 시간
+transition-timing-function : 전환 속도 곡선
+Ex) 빨라졌다가 느리게 / 느렸다가 빠르게 / 균등하게
+Transition-delay : 전환을 시작하기 전 대기시간
+transition : 위 네개의 속성을 축약한 속성
+property duration timing-function delay
+
+@keyFrames
+시간의 흐름에 따라서 스타일을 바꾸는 기술
+트랜지션은 상태의 변화가 있어야 하지만, 키프레임은 상태변화 없이도
+반복 재생할 수 있다.
+
+키프레임 사용 방법
+1. 키프레임 정의
+@keyframes 이름 {
+    0%{스타일} 시작상태
+    50%{스타일} 중간상태
+    100%{스타일} 끝 상태    
+}
+
+@keyframes 이름 {
+    from{} 시작상태
+    to{} 끝 상태    
+}
+
+2. 이름을 가지고 요소에 적용
+특정요소 {
+    animation-name
+}
+키프레임과 관련된 속성
+animation-name : 사용할 @keyframes의 이름
+animation-duration : 1회 재생시간
+animation-timing-function : 전환  속도 곡선
+animation-iteration-count : 반복횟수
+animation-direction : 진행방향
+alternate : 홀수 번째 반복은 처음 -> 끝
+animation-delay : 시작 지연 시간
+animation-fill-mode : 전후 상태 유지 방식
+animation-pay-state : 재싱/일시 정지
+
+animation 
 -->
