@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            --main-color:#94b7ce;
+
+        }
+        body{
+            background: #5f528b;
+        }
+        .box{
+            padding: 20px;
+            color: white;
+            margin-bottom: 16px;
+            border-radius: 8px;
+        }
+
+        .defined{
+            background: var(--main-color, #aaa);
+        }
+
+        /* sub-color 적용하지 않아 기본값 적용 */
+        .undefined{
+            background: var(--sub-color, rgba(192, 109, 119, 0.933));
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS 변수 기본값 실수</h1>
+    <p>정의된 변수와 정의되지 않은 변수의 차이를 비교해보자</p>
+    <div class="box defined">정의된 변수를 사용</div>
+    <div class="box undefined">정의되지 않은 변수의 기본값 적용</div>
+</body>
+</html>
