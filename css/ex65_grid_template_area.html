@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-areas:
+                "header header  header"
+                "main   .   ."
+                "main   .   aside"
+                "footer footer  footer";
+
+            gap: 10px;
+            padding: 16px;
+        }
+
+        header{
+            grid-area: header;
+            background: #34e3ee;
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        main{
+            grid-area: main;
+            background: #7171b3;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        aside{
+            grid-area: aside;
+            background: #cbd6ad;
+            color:white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        footer{
+            grid-area: footer;
+            background: #a6c2da;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>헤데 영역</header>
+        <main>메인 콘텐츠</main>
+        <aside>사이드 영역</aside>
+        <footer>푸터 영역</footer>
+    </div>
+</body>
+</html>
