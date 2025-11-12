@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid{
+            grid-template-columns: repeat(4, 1fr);
+            display: grid;
+   
+            grid-template-areas:
+                "header header  header"
+                "hero   .   promo"
+                ".   main   ."
+                "footer footer  footer";
+            gap: 12px;
+        }
+
+        nav{
+            grid-area: header;
+            background: #111827;
+            color: white;
+            padding: 12px;
+        }
+
+        .hero{
+            grid-area: hero;
+            background: #fde68a;
+            padding: 20px;
+        }
+
+        .promo{
+            grid-area: promo;
+            background: #bfdbfe;
+            padding: 20px;
+        }
+
+        .feed{
+            display: grid;
+            grid-area: main;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 12px;
+            background-color: #ffffff;
+            padding: 12px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card{
+            background: #60a5fa;
+            padding: 20px;
+            color: #042b4a;
+            text-align: center;
+        }
+
+        footer{
+            grid-area: footer;
+            background: #a6c2da;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 4열 기반에서 일부 요소는 2열, 3열을 병합해섯 ㅏ용
+     상단 : 네비게이션(전체너비)
+     두번째 줄 :hero(2열병합, promo(2열병합))
+     세번째 줄 :  좌측 1열 ㅣ quik-links, 중앙:feed(1열), 우측 : ads(1열)
+     feed 내부는 중첩 그리드 카드(가로 3열) 배치 -->
+     <div class="grid">
+        <nav>네비게이션</nav>
+        <div class="hero">Hero ( 2열 병합 )</div>
+        <div class="promo">Promo ( 2열 병합 ) </div>
+            <section class="feed" style="grid-column: 2/4;">
+                <div class="card">1</div>
+                <div class="card">2</div>
+                <div class="card">3</div>
+                <div class="card">4</div>
+                <div class="card">5</div>
+                <div class="card">6</div>
+            </section>
+
+
+        <footer> 푸터 영역</footer>
+     </div>
+</body>
+</html>
