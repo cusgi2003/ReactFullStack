@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini-Project</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        :root{
+            --pad: 0px;
+            --bor: 0.01px solid #cccccf;
+        }
+        .container{
+            background: #fff;
+            display: grid;
+            grid-template-areas:
+                "header header  header"
+                "nav    nav nav"
+                "main   main    aside"
+                "main   main   aside"
+                "main   main   aside"
+                ".  .   ."
+                "footer footer  footer";
+            height: 100vh;
+
+        }
+
+        .profile-header{
+            grid-area: header;
+            background: #0e0b11;
+            color: white;
+            text-align: center;
+            padding: 6px;
+        }
+
+        nav{
+            grid-area: nav;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+        }
+        nav ul{
+            background: #4e506d;
+            color: white;
+            list-style: none;
+            justify-content: center;
+            display: flex;
+            gap: 20px;
+            padding: 12px;
+        }
+        nav ul a {
+            color: white;
+        }
+        nav ul a:hover{
+            color: #eb757b;
+        }
+
+
+        main{
+            padding: 30px;
+        }
+        section{
+            grid-area: main;
+            flex: 7;
+            padding: 20px;
+        }
+        section ul{
+            list-style: none;
+        }
+
+        section h2:hover{
+            color: #6e9fdf;
+        }
+
+        aside{
+            padding: 40px 45px 40px;
+        }
+        .feed{
+            text-align: center;
+            grid-area: aside;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap:2px;
+
+        }
+
+        .feed_info{
+            text-align: center;
+            background: #c6dce0;
+            border: 0.01px solid #beccd3;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+        }
+        img{
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        /* 요일 */
+        .Tue{
+            padding-top: var(--pad);
+            border: var(--bor);
+        }
+        .Wed{
+            padding-top: var(--pad);
+            border: var(--bor);
+        }
+        .Thu{
+            padding-top: var(--pad);
+            border: var(--bor);
+        }
+        .Fri{
+            padding-top: var(--pad);
+            border: var(--bor);
+        }
+        .Sat{
+            padding-top: var(--pad);
+            border: var(--bor);
+        }
+        .Sun{
+            padding-top: var(--pad);
+            border: var(--bor);
+        }
+
+        .week--hightlight{
+            border-color: rgb(141, 142, 221);
+        }
+
+
+        
+        .info{
+            color: #3c699c;
+        }
+
+
+        footer{
+            grid-area: footer;
+            padding: 16px;
+            text-align: center;
+            background: #0e0b11;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="profile-header">
+            <h1>이번주 인천 날씨 단기예보</h1>
+            <p>HTML + CSS 사용 연습중</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#">홈</a></li>
+                <li><a href="#">공지사항</a></li>
+                <li><a href="#">문의</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section>
+                <h2>이번주 날씨 예보</h2>
+                <hr>
+                <p>2025/11/11 기준</p>
+                <p>가까운 관측지점 : 부평-인천광역시 부평구 구산동</p>
+                <p>※조회한 위치에서 가장 가까운 지점의 관측자료입니다.</p>
+                <hr>
+                <h3>(종합)내일 아침 기온 낮아 춥겠고, 당분간 낮과 밤의 기온차 큼</h3>
+                <ul>
+                    <li>(오늘, 11일) 대체로 맑음</li>
+                    <li>(내일, 12일) 대체로 맑다가 오후부터 가끔 구름많음, 서해5도 가끔 구름많음</li>
+                    <li>(모레, 13일) 가끔 구름많다가 아침부터 맑겠음</li>
+                    <li>(글피~그글피, 14일~15일) 대체로 맑음</li>
+                </ul>
+            </section>
+        </main>
+
+        <aside class="feed">
+                    <div class="Tue week--hightlight">
+                        <div class="feed_info">
+                            11일 (화)
+                            <div class="info">오늘</div>
+                        </div>
+                            <img src="./image_file/weather_1.png">
+                            <p>강수 확률 : 0%</p>
+                            <p>15°C 7°</p>
+                    </div>
+
+                    <div class="Wed week--hightlight">
+                        <div class="feed_info">
+                            12일 (수)
+                            <div class="info">내일</div>
+                        </div>
+                            <img src="./image_file/weather_2.png">
+                            <p>강수 확률 : 0%</p>
+                            <p>17°C 5°</p>
+                    </div>
+
+                    <div class="Thu week--hightlight">
+                        <div class="feed_info">
+                            13일 (목)
+                            <div class="info">모레</div>
+                        </div>
+                            <img src="./image_file/weather_2.png">
+                            <p>강수 확률 : 0%</p>
+                            <p>16°C 7°</p>
+                    </div>
+
+                    <div class="Fri week--hightlight">
+                        <div class="feed_info">
+                            14일 (금)
+                            <div class="info">(금)</div>
+                        </div>
+                            <img src="./image_file/weather_1.png">
+                            <p>강수 확률 : 0%</p>
+                            <p>12°C 5°</p>
+                    </div>
+
+                    <div class="Sat week--hightlight">
+                        <div class="feed_info">
+                            15일 (토)
+                            <div class="info">(토)</div>
+                        </div>
+                            <img src="./image_file/weather_1.png">
+                            <p>강수 확률 : 10%</p>
+                            <p>13°C 6°</p>
+                    </div>
+
+                    <div class="Sun week--hightlight">
+                        <div class="feed_info">
+                            16일 (일)
+                            <div class="info">(일)</div>
+                        </div>
+                            <img src="./image_file/weather_2.png">
+                            <p>강수 확률 : 10%</p>
+                            <p>14°C 8°</p>
+                    </div>
+        </aside>
+
+        <footer>
+            <p>기상청 바로가기 : </p><a href="https://www.weather.go.kr/w/weather/forecast/short-term.do?stnId=109#dong/2823751000/37.4925981/126.7219945/%EC%9D%B8%EC%B2%9C%EA%B4%91%EC%97%AD%EC%8B%9C%20%EB%B6%80%ED%8F%89%EA%B5%AC%20%EB%B6%80%ED%8F%891%EB%8F%99/LOC/%EC%9C%84%EA%B2%BD%EB%8F%84(37.49,126.72)">
+                <img src="./image_file/gisang_.png">
+            </a></p>
+            <smaal>&copy; 2025 My Mini Project - HTML + CSS를 이용한 미니 프로젝트</smaal>
+        </footer>
+    </div>
+</body>
+</html>
