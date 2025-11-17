@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. 명시적 형변환
+        // 형변환 함수를 이용한다
+        // Number(데이터)
+        console.log(typeof Number("123")); //123(넘버타입)
+        console.log(typeof Number("3.14")); //3.14(넘버타입)
+        console.log(typeof Number("     10      ")); //10(양쪽 공백을 무시)
+        console.log(typeof Number("abc")); //NaN
+        console.log(typeof Number(""));
+        console.log( Number(true));
+        console.log( Number(false));
+
+        // parseInt() / parseFloat()
+        // 문자열에서 숫자 부분만 앞에서부터 잘라서 숫자로 만든다.
+        console.log(parseInt("123px"));
+        console.log(parseInt("abc123px"));
+
+        // Boolean()
+        // 어떤 값이든 boolean타입의 데이터로 바꿔준다
+        console.log(Boolean(1));
+        console.log(Boolean(0));
+        console.log(Boolean("Hello"));
+        console.log(Boolean(""));
+        console.log(Boolean(null));
+        console.log(Boolean(undefined));
+        console.log(Boolean(NaN));
+
+        // 암시적 형변환
+        // 자바스크립트가 연산을 수행하기 위해 타입을 자동으로 바꿔주는 경우
+        // 편리하기도 하지만, 버그의 원인이기도 하닫
+        // 문자열 + 숫자열 => 문자열
+        console.log(("10" + 10));
+        console.log((10 + "10"));
+        console.log(("Hello" + 1));
+
+        //  -,*,/는 숫자연산을 시도한다
+        console.log("10" - 2);
+    </script>
+</body>
+</html>
