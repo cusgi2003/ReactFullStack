@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 정수배열 [1,2,3,4,5,6,7,8,9,10]에서
+        // 짝수만 골라 두배로 만든 새 배열을 반환하세요
+
+        var Arr = [1,2,3,4,5,6,7,8,9,10];
+
+        var iArr = Arr.filter(v => v%2 ===0);
+        var result = iArr.map(v => v*2);
+        console.log(result);
+
+
+
+        // 메서드체이닝
+        // 메서드를 .으로 나열하여 작성하기
+        // 메서드체이닝이 되는 조건
+        // 메서드의 실행 결과가 다시 객체(또는 배열)을 반환해야한다.
+
+        // 점수 배열 [100,98,58,71,26,50,39,45]의 평균을 구하세요
+
+        let Arr2 = [100,98,58,71,26,50,39,45];
+        var result2 = Arr2.reduce((sum,v) => sum+v, 0) / Arr2.length;
+        console.log(result2);
+
+        // 배열 [1,2,3,4,5,6,7,8,9,10]의 총합
+
+        let Arr3 = [1,2,3,4,5,6,7,8,9,10];
+        var result3 = Arr3.reduce((sum,v) => sum +v, 0);
+        console.log(result3);
+
+        // ['apple', 'kiwi', 'banana', 'pear', 'grape', 'plum']배열에서
+        // 5글자 이상만 longwords라는 배열에 넣기
+
+        var Arr4 = ['apple', 'kiwi', 'banana', 'grape', 'plum'];
+        let longwords=[];
+
+        longwords = Arr4.filter(v => v.length>=5);
+        console.log(longwords);
+
+        // 중복된 문자 제거하기
+        // 정수 배열 [1, 2, 2, 3, 4, 4, 5, 5, 5]에서 중복된 숫자를 제거하세요
+
+        var Arr5 = [1,2,2,3,4,4,5,5,5];
+        let result5 = [];
+
+        for(let v of Arr5){
+            let current = v;
+            if(!result5.includes(current)){
+                result5.push(current);
+            }
+        }
+
+
+
+
+    </script>
+</body>
+</html>
