@@ -166,7 +166,7 @@
                 this.users.push({name, age});
                 console.log(`사용자 추가 : ${name}(${age})`);
             },
-            printAll(users){
+            printAll(){
                 for(i in users){
                     console.log();
                 }
@@ -180,7 +180,10 @@
             }
 
         }
+        userManager.addUser("홍길동", 20);
+        userManager.addUser("김영희", 25);
 
+        userManager.printAll();
     </script>
 </body>
 </html>
