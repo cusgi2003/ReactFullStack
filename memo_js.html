@@ -118,4 +118,73 @@ document.querySelector(css선택자)
 
 
 js를 이용하여 속성을 조정 or 스타일 조정
+
+1. 조종하고자 하는 태그를 선택
+document.getElementById(아이디값)
+document.querySelector(css선택자)
+
+2. 속성값을 조정하거나, style 조정할 수도 있다
+대상태그.hasAtribute(속성이름)
+대상태그.setAttribute(속성이름,값)
+대상태그.getAttribute(속성값)
+대상태그.removeAttribute(속성명)
+
+
+style 조정
+
+1. style객체를 이용환 조정
+대상태그.style.
+backgroundColor='red'
+fontSize
+width
+height
+
+<style>
+    .클래스명{
+        스타일
+    }
+</style>
+
+대상태그.classList.add(클래스명)
+대상태그.classList.remove(클래스명)
+대상태그.classList.toggle(클래스명) : 있으면 제거, 없으면 추가
+대상태그.classList.contains(클래스명) : 대상 클래스가 있는지 확인
+
+3. style.cssText
+요소의 모든 인라인 스타일을 문자열 형태로 읽거나 
+덮어쓰거나 추가할 수 있는 속성
+대상태그.style.cssText = "스타일"
+
+태그의 content부분에 내용넣기
+
+대상태그.innerText = " 안녕하세요"
+-순수 텍스트만 넣는다
+-태그를 넣으면 그대로 출력된다
+
+대상태그.textContent = "안녕하세요"
+-innerText와 유사하지만 DOM 성능이 더 좋다.
+
+대상태그.innerHTML = "storng>강조된 텍스트</strong>"
+-html 태그가 실제로 적용
+-UI를 동적으로 만들 때 사용
+
+<input value="내용">
+input.value ="홍길동"
+-input태그.textArea
+
+이벤트
+브라우저랑 상호작용하는 모든 행위
+
+클릭, 더블클릭, 마우스올림, 내림, ...
+
+
+폼 이벤트
+focus   : 요소로 포커스가 이동되었을 때 
+blur    : 요소에 포커스가 벗어났을 떄
+change  : 요소에 값이 변경되었을 때
+
+이벤트가 발생했을 때 어떠 ㄴ행위를 할건지 정하는 걸 '이벤트처리'라고 한다.
+
+이벤트리스너 메서드 사용하기
+대상태그.addEventListener()(이벤트 타입, )
 -->
