@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-
+        ul{
+            display: flex;
+            list-style: none;
+            gap: 10px;
+        }
     </style>
 </head>
 <body>
@@ -15,49 +19,60 @@
 
     <table border="2">
         <tr>
-            <td>수1</td>
-            <td>
-                <input type="text" id="text1">
+            <th class="su">수1</th>
+            <td><input id="su1" placeholder="정수만 입력하세요"></td>
+        </tr>
+         <tr>
+            <th class="su">수1</th>
+            <td><input id="su1" placeholder="정수만 입력하세요"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <ul>
+                    <li><input type="button" id="btnPlus" value="+"></li>
+                    <li><input type="button" id="btnMinus"  value="-"></li>
+                    <li><input type="button" id="btnMulti" value="*"></li>
+                    <li><input type="button" id="btnDiv" value="/"></li>
+                </ul>
             </td>
         </tr>
         <tr>
-            <td>수2</td>
+            <th>결과</th>
             <td>
-                <input type="text" id="text2">
-            </td>
-        </tr>
-        <tr>
-            <input type="button" id="target1" value="+">
-            <input type="button" id="target2" value="-">
-            <input type="button" id="target3" value="*">
-            <input type="button" id="target4" value="/">
-            </td>
-        </tr>
-        <tr>
-            <td>결과</td>
-            <td>
-                <output id="result">
-                </output>
+                <input id="result">
             </td>
         </tr>
     </table>
 
     <script>
-        let x = document.getElementById("text1");
+        function cla(n){
+            const num1 = document.querySelector("#su1").value;
+            const num2 = document.querySelector("#su2").value;
+            const result = document.querySelector("#result");
 
-        let btn1 = document.getElementById("target1");
-        let btn2 = document.getElementById("target2");
-        let btn3 = document.getElementById("taget3");
-        let btn4 = document.getElementById("target4");
-        let result = document.getElementById("result")
-
-        function calculator(event, target.id, result){
-            switch(event.target.id){
-                case 'target1':
-                    result = 
+            if(n==='+'){
+                result.value = num1 + num2;
+            } else if(n==='-'){
+                result.value = num1 - num2;
+            } else if(n==='*'){
+                result.value = num1 * num2;
+            } else if(n==='/'){
+                result.value = num1 / num2;
             }
-
         }
+
+        document.querySelector("#btnPlus").addEventListener("click", () => {
+            cal('+');
+        })
+        document.querySelector("#btnMinus").addEventListener("click", () => {
+            cal('-');
+        })
+        document.querySelector("#btnMulti").addEventListener("click", () => {
+            cal('*');
+        })
+        document.querySelector("#btnDiv").addEventListener("click", () => {
+            cal('/');
+        })
     </script>
 </body>
 </html>
