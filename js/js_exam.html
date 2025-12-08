@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>게시글의 제목만 불러오기</h1>
+    <button id="loadBtn">제목 가져오기</button>
+    <p id="title">여기에 제목이 표시된다</p>
+
+    <script>
+        const list = document.querySelector("#title");
+        list.innerHTML ="";
+        // "https://jsonplaceholder.typicode.com/posts/1"
+
+        try{
+            const res = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+
+            if(!res.ok){
+                throw new Error("에러 발생");
+            }
+
+            const post = await.res.json();
+
+            post.forEach(post=> {
+                const p = document.createElement("p");
+                p.textContent = `${post.post}`;
+                post.append(p);
+            })
+        } catch(err) {
+            post.innerHTML = `<p>데이터 불러오기 실패 </p>`;
+            console.log(err);
+        }
+
+        document.querySelector("#loadBtn")
+            .addEventListener("click", load)
+    </script>
+</body>
+</html>
