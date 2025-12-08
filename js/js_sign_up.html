@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: #f2edcf;
+            padding: 40px;
+        }
+
+        .container{
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 18px;
+            display: flex;
+            flex-direction: column;
+        }
+        label{
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input{
+            width: 90%;
+            padding: 10px;
+            margin-top: 5px;
+        }
+
+        small{
+            color: rgb(238, 95, 95);
+            display: none;
+        }
+
+        button{
+            margin-top: 20px;
+            width: 94%;
+            padding: 12px;
+            background: #bdd7ef;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+    </style>
+
+</head>
+<body>
+    <!-- 
+        이름, 이메일, 비밀번호 입력
+        비밀번호 최소길이 검사
+        이메일 형식검사
+        경고메시지 출력
+        모든 조건 충족시 "가입완료" 메세지 출력
+    -->
+    <div class="container">
+        <h2>회원 가입</h2>
+        <label>이름 : </label>
+        <input id="nameInput" placeholder="이름입력">
+        <small id="nameError">이름을 입력해주세요</small>
+
+        <label>이메일 : </label>
+        <input type="email" id="emailInput" placeholder="example@email.com">
+        <small id="emailError">올바른 이메일을 입력해주세요</small>
+
+        <label>비밀번호 :  : </label>
+        <input type="password" id="passwordInput" placeholder="8자리 이상 입력">
+        <small id="passwordError">비밀번호는 8자리 이상이어야 합니다.</small>
+
+        <button id="signupBtn">가입하기</button>
+    </div>
+
+    <script>
+        // 가입하기 버튼을 눌렀을 때, 이름 입력창에 내용이 입력안되있다면
+        // small에 적은 내용을 보이게 하기
+        // 한글자라도 입력되면 다시 사라지게 하기 
+        const nameInput = document.querySelector('#nameInput');
+        const emailInput = document.querySelector('#emailInput');
+        const passwordInput = document.getElementById('passwordInput');
+        const signupBtn = document.querySelector('#signupBtn');
+
+        const nameError = document.querySelector('#nameError');
+        const emailError = document.getElementById('emailError');
+        const passwordError = document.getElementById('passwordError');
+
+
+        signupBtn.addEventListener("click", () => {
+            if(nameInput.value.trim() === ""){
+                nameError.style.display = "block";
+            } else {
+                nameError.style.display = "none"
+            }
+
+
+            // 비밀번호의 길이가 8글자보다 적으면 에러메시지를 띄운다
+            // 8글자 보다 많으면 에러메시지를 숨긴다.
+
+            if(passwordInput.value.length >= 8){
+                passwordError.style.display = "none";
+            } else {
+                passwordError.style.display = "block";
+            }
+
+
+            // 이메일이 형식에 맞는 검사
+            // 정규표현식(내가 정한 형식에 맞는지 검사)
+            //  /^[^`\s@]+ ; 
+
+        })
+
+
+    </script>
+
+</body>
+</html>
